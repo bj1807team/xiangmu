@@ -1,0 +1,58 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.cxl-wb{
+    width: 100%;
+    height: 100vh;
+    .mainbox{
+        width: 100%;
+        // height: 300px;
+        background: #cccccc;
+        margin-top: 50px;
+        p{
+            font-size: 0.5rem;
+            font-weight: 900;
+        }
+
+    }
+    img{
+        width: 100%;
+    }
+    .header-box{
+        font-size: 40px;
+        .header-top{
+            width: 100%;
+            height: 50px;
+             line-height: 1rem;
+            padding: 0 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            .hed-top{
+                  color: rgb(15, 136, 235);
+                  font-size: 60px;
+            }
+            .sou-put{
+                height: 30px;
+                color: #999;
+                width: 50%;
+                text-align: center;
+                font-size: 30px;
+                line-height: 0.6rem;
+                margin-top: 0.2rem;
+                border-radius: 30px;
+                background: hsla(0, 0%, 92%, .72);
+                .inp{
+                     height: 25px;
+                    width: 70%;
+                    border: none;
+                    outline: none;
+                    color: #999;
+                background: hsla(0, 0%, 92%, .72);
+
+
+                }
+            }
+        }
+    }
+}
