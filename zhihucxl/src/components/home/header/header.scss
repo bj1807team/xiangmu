@@ -5,10 +5,11 @@
     .header-top{
         width: 100%;
         height: 50px;
-        //  line-height: 1rem;
+        //  line-height: 50px;
         padding: 0 20px;
         box-sizing: border-box;
-        overflow: hidden;
+        // overflow: hidden;
+        position: relative;
         .hed-top{
               color: rgb(15, 136, 235);
               font-size: 60px;
@@ -22,14 +23,27 @@
             text-align: center;
             font-size: 30px;
             line-height: 0.6rem;
-            margin: 0 10px;
+            margin: 10px;
             border-radius: 30px;
             background: hsla(0, 0%, 92%, .72);
         }
         .size-box{
             font-size: 30px;
+             margin-top: 10px;
             display: inline-block;
              color: rgb(15, 136, 235);
+        }
+        .cai-box{
+            // position: relative;
+        }
+        .cai-cont{
+            width: 100%;
+            padding: 20px;
+            position: absolute;
+            top:50px;
+            left: 0;
+            background: #fff;
+            z-index: 10;
         }
     }
     // .yin-box{

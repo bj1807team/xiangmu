@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import LinkList from '../list'
+
+
 import './header.scss'
-export default class index extends Component {
+export default class HeaderTab extends Component {
     render() {
         const { match, show} = this.props
         return (

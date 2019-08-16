@@ -4,7 +4,8 @@ import HeaderTab from './header/header-tab'
 import {Switch,Route,Redirect} from 'react-router-dom'
 import './home.scss'
 import Main from './main'
-export default class index extends Component {
+import {connect} from 'react-redux'
+ class MainBox extends Component {
     constructor(props){
         super()
         this.state={
@@ -27,12 +28,13 @@ export default class index extends Component {
     }
     render() {
         const {show}=this.state
-        const {match} = this.props
+        const { match, statu} = this.props
+
         return (
             <div className="home-box container" ref={this.scrllele} onScroll={this.soll}>
                 <Header ></Header>
                 <div className="yin-box"></div>
-                <HeaderTab show={show} {...this.props}></HeaderTab>
+                {statu?'':<HeaderTab show={show} {...this.props}></HeaderTab>}
                 <main className="home-main">
                     <Switch>
                         <Route path={`${match.path}/:id`} component={Main} />
@@ -44,3 +46,5 @@ export default class index extends Component {
     }
 
 }
+
+export default connect(state => state)(MainBox)

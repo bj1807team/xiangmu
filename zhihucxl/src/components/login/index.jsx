@@ -44,9 +44,9 @@ import { stateLoginAction} from '../../store/actionCreators/login'
          }
 
         this.props.stateLogin()
-         if (this.props.statu){
+
              this.props.history.push('/home')
-         }
+
 
      }
      btnYan = () => {

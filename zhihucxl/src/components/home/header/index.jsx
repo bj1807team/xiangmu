@@ -1,10 +1,16 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import {connect} from 'react-redux'
 import './header.scss'
-export default class index extends Component {
+class headers extends Component {
+    constructor(props){
+        super()
+        this.state={
+            isShows:false
+        }
+    }
     render() {
-
         return (
             <header className="header-box ">
                 <div className='header-top flex flex-ju'>
@@ -12,11 +18,37 @@ export default class index extends Component {
                     <NavLink className="sou-put" to='/weibo'>
                         🔍 搜索
                     </NavLink>
-                    <NavLink to='/login' className="size-box">
+                    {this.props.statu ?<div>
+                        <div className="cai-box" onClick={() => this.setState({
+                            isShows: !this.state.isShows
+                        })}>=</div>
+                        {this.state.isShows&& <ul className='cai-cont'>
+                            <li onClick={() => this.setState({
+                                isShows: !this.state.isShows
+                            })}>
+                                <NavLink to='/home' >首页</NavLink>
+                            </li>
+                            <li onClick={() => this.setState({
+                                isShows: !this.state.isShows
+                            })}>
+                                <NavLink to='/home' >首页</NavLink>
+                            </li>
+                            <li onClick={() => this.setState({
+                                isShows: !this.state.isShows
+                            })}>
+                                <NavLink to='/login' >退出登录</NavLink>
+                            </li>
+                        </ul>}
+
+
+                    </div>: <NavLink to='/login' className="size-box">
                         注册或者登陆
-                    </NavLink>
+                    </NavLink>}
+
                 </div>
             </header>
         )
     }
 }
+
+export default connect(state => state,)(headers)
