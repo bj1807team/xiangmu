@@ -21,22 +21,31 @@ class headers extends Component {
                     {this.props.statu ? <div>
                         <div className="cai-box" onClick={() => this.setState({
                             isShows: !this.state.isShows
-                        })}>=</div>
+                        })}><i className='iconfont icon-caidan1'></i></div>
                         {this.state.isShows && <ul className='cai-cont'>
                             <li onClick={() => this.setState({
                                 isShows: !this.state.isShows
                             })}>
-                                <NavLink to='/home' >♀ 首页</NavLink>
+                                <NavLink to='/home' >
+                                    <i className='iconfont icon-shouye1'></i>
+                                    首页
+                                </NavLink>
                             </li>
                             <li onClick={() => this.setState({
                                 isShows: !this.state.isShows
                             })}>
-                                <NavLink to='/card' >♀ 我的主页</NavLink>
+                                <NavLink to='/card' >
+                                    <i className='iconfont icon-wode1'></i>
+
+                                    我的主页</NavLink>
                             </li>
                             <li onClick={() => this.setState({
                                 isShows: !this.state.isShows
                             })}>
-                                <NavLink to='/login' >♀ 退出登录</NavLink>
+                                <NavLink to='/login' >
+                                    <i className='iconfont icon-icon-'></i>
+
+                                    退出登录</NavLink>
                             </li>
                         </ul>}
 

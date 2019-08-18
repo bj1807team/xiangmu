@@ -37,6 +37,11 @@
         }
         .cai-box{
             // position: relative;
+            i{
+                font-size: 0.6rem;
+                margin-top: 8px;
+                display: inline-block;
+            }
         }
         .cai-cont{
             width: 100%;
@@ -47,16 +52,21 @@
             background: #fff;
             z-index: 10;
             li{
-                list-style: none;
+                height: 0.7rem;
+                line-height: 0.7rem;
                 font-size: 0.35rem;
-                padding-top: 10px
+                padding-top: 10px;
+                color:#444444;
+                border-bottom: 1px solid #EFEFEF;
+                .icon-shouye1,.icon-wode1,.icon-icon-{
+                    font-size: 0.5rem;
+                    display: inline-block;
+                    margin-right: 5px;
+                    color:#8590A6;
+                }
             }
         }
     }
-    // .yin-box{
-    //         height: 5px;
-    //         background-image: linear-gradient(0deg, #fcfcfc, #ebebeb);
-    // }
     .header-tab{
         width: 100vw;
         height: 50px;
