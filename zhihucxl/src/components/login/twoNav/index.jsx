@@ -101,7 +101,6 @@ import { stateLoginAction } from '../../../store/actionCreators/login'
 const mapDispatchToProps = (dispatch) => {
     return {
         stateLogin() {
-            console.log(stateLoginAction())
             dispatch(stateLoginAction())
         }
     }

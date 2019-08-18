@@ -31,7 +31,10 @@ class Weibo extends Component {
                             <ul className='cxl-ul'>
                                 {
                                     list && list.map((item, index) => {
-                                        return <li key={index} onClick={() => pushlist(index)}>{item}</li>
+                                        return <li key={index} onClick={() => pushlist(index)}>
+                                            <span>🔍</span>
+                                            {item}
+                                        </li>
                                     })
                                 }
                             </ul>
@@ -42,7 +45,6 @@ class Weibo extends Component {
                                         <h5>搜索历史</h5>
                                         <span onClick={clearItem}>清空</span>
                                     </div>
-
                                     {
                                         historyList.map((item, index) => {
                                             return <div key={index} >

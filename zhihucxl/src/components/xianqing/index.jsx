@@ -21,9 +21,10 @@ export default class index extends Component {
             })
     }
     showBtn(idx) {
-        this.state.isShow[idx] = !this.state.isShow[idx]
+        let isShows=[]
+        isShows[idx] = !this.state.isShow[idx]
         this.setState({
-            isShow: this.state.isShow
+            isShow: isShows
         })
     }
     render() {
