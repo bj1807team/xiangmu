@@ -1,4 +1,5 @@
 import axios from 'axios';
+import jsonp from 'jsonp'
 // 设置默认访问路径
 axios.defaults.baseURL = "http://localhost:4503"
 
@@ -22,6 +23,28 @@ export let shouApi = (data) => {
 export let xiangqingApi = (data,id) => {
     return axios.request({
         url: `/xiang?page=${data}&id=${id}`,
+        method: 'get',
+    })
+}
+
+//百度接口
+export const getBaidu = ({ value }) => {
+    return new Promise((resolve, reject) => {
+        jsonp('http://suggestion.baidu.com/su?wd=' + value, { param: "cb" }, (err, data) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(data)
+            }
+        })
+    })
+}
+
+// 首页登录成功数据
+
+export const gitHomes = ()=>{
+    return axios.request({
+        url:'/denghome',
         method: 'get',
     })
 }

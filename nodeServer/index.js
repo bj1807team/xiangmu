@@ -78,8 +78,14 @@ app.get('/xiang', (req, res) => {
 })
 
 
+// 登录成功首页数据
 
-
+const dengShouye = require('./shouye/index.json')
+app.get('/denghome', (req, res) => {
+    res.json({
+        list: dengShouye
+    })
+})
 
 
 

@@ -4,6 +4,8 @@ import HeaderTab from './header/header-tab'
 import {Switch,Route,Redirect} from 'react-router-dom'
 import './home.scss'
 import Main from './main'
+import MainHome from './mainHome'
+
 import {connect} from 'react-redux'
  class MainBox extends Component {
     constructor(props){
@@ -36,10 +38,14 @@ import {connect} from 'react-redux'
                 <div className="yin-box"></div>
                 {statu?'':<HeaderTab show={show} {...this.props}></HeaderTab>}
                 <main className="home-main">
-                    <Switch>
-                        <Route path={`${match.path}/:id`} component={Main} />
-                        <Redirect to={`${match.path}/tui`} />
-                    </Switch>
+                    {
+                        statu ? <Route path='/home' component={MainHome} /> : <Switch>
+
+                            <Route path={`${match.path}/:id`} component={Main} />
+                            <Redirect to={`${match.path}/tui`} />
+                        </Switch>
+                    }
+
                 </main>
             </div>
         )
