@@ -12,8 +12,10 @@ class headers extends Component {
         }
     }
     render() {
+        const potions = this.props.name
         return (
-            <header className="header-box ">
+
+            <header className={this.props.statu ? 'header-box potion' : potions ?'header-box potion': 'header-box'}>
                 <div className='header-top flex flex-ju'>
                     <NavLink to='/home' className="hed-top">知乎</NavLink>
                     <NavLink className="sou-put" to='/weibo'>

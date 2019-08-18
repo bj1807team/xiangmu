@@ -2,7 +2,7 @@
     font-size: 40px;
     background: #fff;
     width: 100%;
-    // position: fixed;
+
     .header-top{
         width: 100%;
         height: 50px;
@@ -104,4 +104,9 @@
         top:0;
         z-index: 5;
     }
+}
+.potion{
+ position: fixed;
+ top:0;
+ z-index: 10;
 }

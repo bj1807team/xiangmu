@@ -5,7 +5,7 @@ import {Switch,Route,Redirect} from 'react-router-dom'
 import './home.scss'
 import Main from './main'
 import MainHome from './mainHome'
-
+// import Zhang from './dianzhang'
 import {connect} from 'react-redux'
  class MainBox extends Component {
     constructor(props){
@@ -34,10 +34,11 @@ import {connect} from 'react-redux'
 
         return (
             <div className="home-box container" ref={this.scrllele} onScroll={this.soll}>
-                <Header ></Header>
+                <Header></Header>
                 <div className="yin-box"></div>
                 {statu?'':<HeaderTab show={show} {...this.props}></HeaderTab>}
                 <main className="home-main">
+                    {/* <Zhang></Zhang> */}
                     {
                         statu ? <Route path='/home' component={MainHome} /> : <Switch>
 

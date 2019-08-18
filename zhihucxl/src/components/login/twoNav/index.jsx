@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import './index.scss'
-// import { loginApi } from '../../api/index'
+import { connect } from 'react-redux'
 
-export default class TwoNav extends Component {
+// import { loginApi } from '../../api/index'
+import { stateLoginAction } from '../../../store/actionCreators/login'
+ class TwoNav extends Component {
     constructor(props) {
         super(props);
         this.state = {
             login: {
                 username: '',
-                yan: '',
+                password: '',
                 checkbox: true,
-                yanzheng: ''
             }
         }
     }
@@ -31,34 +32,18 @@ export default class TwoNav extends Component {
     }
     btnDenglu = () => {
 
-        const { username, yan, yanzheng } = this.state.login
+        const { username, password } = this.state.login
 
         if (username.length < 5 || username.length > 12 || username.length === 0) {
             alert('请输入正确的手机号')
             return false
         }
-        console.log(typeof yan)
-        console.log(typeof yanzheng)
-
-        if (yan.length === 0 || Number(yan) !== yanzheng) {
-            alert('请输入正确的验证码')
+        if (password.length === 0 || password !== '123456') {
+            alert('请输入正确的密码')
             return false
         }
-        alert('登录成功')
+        this.props.stateLogin()
         this.props.history.push('/home')
-
-        // 登录的接口
-        // const { login } = this.state
-        // this.props.history.push('/home')
-        // loginApi(login).then(item => {
-        //     if (item.state.typely) {
-        //         alert('登录成功')
-        //         // this.props.history.push('/home')
-        //     } else {
-        //         alert('请输入正确的用户名或者密码')
-        //     }
-        // })
-
     }
     btnYan = () => {
         const suiji = Math.floor(Math.random() * (1000 - 10000)) + 10000;
@@ -70,7 +55,7 @@ export default class TwoNav extends Component {
     }
 
     render() {
-        const { username, yan } = this.state.login
+        const { username, password } = this.state.login
         return (
             <div className='login-container'>
                 <header className='login-header'>
@@ -88,8 +73,8 @@ export default class TwoNav extends Component {
                     </div>
                     <div className='l-pass '>
                         <input type="text"
-                            value={yan}
-                            name="yan"
+                            value={password}
+                            name="password"
                             onChange={this.Change}
                             placeholder='请输入密码' className='l-h-input2' />
                     </div>
@@ -112,3 +97,13 @@ export default class TwoNav extends Component {
         )
     }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        stateLogin() {
+            console.log(stateLoginAction())
+            dispatch(stateLoginAction())
+        }
+    }
+}
+export default connect(state => state, mapDispatchToProps)(TwoNav)

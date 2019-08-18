@@ -67,12 +67,21 @@ app.get('/shou',(req,res)=>{
 
 // 详情数据
 const xiangqing = require('./xqdata/xiangqing.json')
+const xiangqingHomr = require('./xqdata/xianghome.json')
 app.get('/xiang', (req, res) => {
     var { page,id} = req.query
-    let list = xiangqing[page][id]
-    res.json({
-        list
-    })
+    if (page === '/home'){
+        let list = xiangqingHomr[id]
+        res.json({
+            list
+        })
+    }else{
+         let list =  xiangqing[page][id]
+        res.json({
+            list
+        })
+    }
+
 })
 
 
