@@ -1,6 +1,7 @@
 import React, { Component, Suspense } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import Card from '../home/card'
+import TwoNav from '../login/twoNav';
 // import Content from '../content';
 
 
@@ -21,6 +22,7 @@ export default class App extends Component {
                         <Route path="/weibo" component={Weibo} />
                         <Route path="/xianqi/:id" component={Xianqing} />
                         <Route path='/card' component={Card} />
+                        <Route path='/twonav' component={TwoNav} />
                         <Redirect to='/login' />
                     </Switch>
                 </Suspense>
