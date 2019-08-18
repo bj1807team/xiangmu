@@ -25,15 +25,9 @@ export default (state = defaultState,action)=>{
             break;
         // 添加到历史记录
         case 'pushHistoryList':
-            // console.log(action.index)
-            const item = newState.list.find((item, index) => {
-                if (index === action.index) {
-                    return item
-                }
-            })
+            const item = newState.list.find((item, index) => index === action.index)
             newState.historyList.push(item)
             newState.inputValue = ''
-            // console.log(newState)
             break;
         // 清空历史记录
         case 'ClearhistoryList':
