@@ -33,6 +33,7 @@ export default class index extends Component {
                                 <p className="title">{item.title}</p>
                                 <img src={item.img} alt="" />
                                 <p className="content">{item.content}</p>
+                                <i className='iconfont icon-stars'></i>
                             </NavLink>
                         })
                     }

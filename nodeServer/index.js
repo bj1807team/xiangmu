@@ -69,9 +69,7 @@ app.get('/shou',(req,res)=>{
 const xiangqing = require('./xqdata/xiangqing.json')
 app.get('/xiang', (req, res) => {
     var { page,id} = req.query
-
     let list = xiangqing[page][id]
-    // console.log(page, id, list)
     res.json({
         list
     })
