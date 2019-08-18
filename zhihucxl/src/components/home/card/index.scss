@@ -1,0 +1,74 @@
+.profile{
+    width: 100%;
+    .profile-card{
+        width: 100%;
+        height: 340px;
+        border-bottom: 10px solid #f6f6f6;
+        .p-c-center{
+            width: 90%;
+            height: 290px;
+            margin: 0 auto;
+            // background: pink;
+            border-bottom: 1px solid #ccc;
+            .img-box{
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                margin: 0 auto;
+                border: 2px solid #fff;
+                img{
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                    margin-top: 30px;
+                }
+                .name{
+                    font-size: 0.5rem;
+                    text-align: center;
+                }  
+                .profile-button{
+                    width: 140px;
+                    height: 0.8rem;
+                    margin: 0 auto;
+                    font-size: 0.3rem;
+                    text-align: center;
+                    line-height: 0.8rem;
+                    color:#fff;
+                    margin-top: 15px;
+                    border-radius: 5px;
+                    background:#0084FF;
+                }          
+            }
+        }
+        .care{
+            width: 70%;
+            margin: 0 auto;
+            justify-content: space-between;
+            font-size: 30px;
+            span{
+                display: inline-block;
+                padding: 15px;
+
+            }
+        }
+    }
+    .profile-data{
+        width: 100%;
+        border-bottom: 1px solid #f6f6f6;
+        ul{
+            justify-content: space-between;
+            margin: 0 auto;
+            width: 85%;
+            li{
+                width: 60px;
+                height: 1rem;
+                text-align: center;
+                line-height: 1rem;
+                font-size: 32px;
+            }
+            .link{
+                border-bottom: 1px solid #1A1A1A;
+            }
+        }
+    }
+}

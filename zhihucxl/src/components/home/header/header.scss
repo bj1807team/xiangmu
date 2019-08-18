@@ -12,8 +12,9 @@
         position: relative;
         .hed-top{
               color: rgb(15, 136, 235);
-              font-size: 60px;
+              font-size: 50px;
               display: inline-block;
+              line-height: 1rem;
         }
         .sou-put{
             height: 30px;
@@ -29,7 +30,8 @@
         }
         .size-box{
             font-size: 30px;
-             margin-top: 10px;
+            //  margin-top: 10px;
+            line-height: 1rem;
             display: inline-block;
              color: rgb(15, 136, 235);
         }
@@ -44,6 +46,11 @@
             left: 0;
             background: #fff;
             z-index: 10;
+            li{
+                list-style: none;
+                font-size: 0.35rem;
+                padding-top: 10px
+            }
         }
     }
     // .yin-box{

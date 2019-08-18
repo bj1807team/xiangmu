@@ -6,10 +6,10 @@ import LinkList from '../list'
 import './header.scss'
 export default class HeaderTab extends Component {
     render() {
-        const { match, show} = this.props
+        const { match, show } = this.props
         return (
             <header className="header-box ">
-                <div className={show?'header-tab header-ding':'header-tab'}>
+                <div className={show ? 'header-tab header-ding' : 'header-tab'}>
                     <ul className='ul'>
                         {
                             LinkList.map(item => {

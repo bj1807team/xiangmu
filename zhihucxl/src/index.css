@@ -17,10 +17,14 @@ code {
 }
 a{
   text-decoration: none;
+  color:#1A1A1A;
 }
 
  .flex{
    display: flex
+ }
+ li{
+   list-style: none;
  }
  .flex-ju{
   justify-content: space-between;

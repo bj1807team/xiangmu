@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import './header.scss'
 class headers extends Component {
-    constructor(props){
+    constructor(props) {
         super()
-        this.state={
-            isShows:false
+        this.state = {
+            isShows: false
         }
     }
     render() {
@@ -18,31 +18,31 @@ class headers extends Component {
                     <NavLink className="sou-put" to='/weibo'>
                         🔍 搜索
                     </NavLink>
-                    {this.props.statu ?<div>
+                    {this.props.statu ? <div>
                         <div className="cai-box" onClick={() => this.setState({
                             isShows: !this.state.isShows
                         })}>=</div>
-                        {this.state.isShows&& <ul className='cai-cont'>
+                        {this.state.isShows && <ul className='cai-cont'>
                             <li onClick={() => this.setState({
                                 isShows: !this.state.isShows
                             })}>
-                                <NavLink to='/home' >首页</NavLink>
+                                <NavLink to='/home' >♀ 首页</NavLink>
                             </li>
                             <li onClick={() => this.setState({
                                 isShows: !this.state.isShows
                             })}>
-                                <NavLink to='/home' >首页</NavLink>
+                                <NavLink to='/card' >♀ 我的主页</NavLink>
                             </li>
                             <li onClick={() => this.setState({
                                 isShows: !this.state.isShows
                             })}>
-                                <NavLink to='/login' >退出登录</NavLink>
+                                <NavLink to='/login' >♀ 退出登录</NavLink>
                             </li>
                         </ul>}
 
 
-                    </div>: <NavLink to='/login' className="size-box">
-                        注册或者登陆
+                    </div> : <NavLink to='/login' className="size-box">
+                            注册或者登陆
                     </NavLink>}
 
                 </div>
@@ -51,4 +51,4 @@ class headers extends Component {
     }
 }
 
-export default connect(state => state,)(headers)
+export default connect(state => state)(headers)
