@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import './header.scss'
+import {falseLoginAction} from '../../../store/actionCreators/login'
 class headers extends Component {
     constructor(props) {
         super()
@@ -33,9 +34,12 @@ class headers extends Component {
                             })}>
                                 <NavLink to='/card' >♀ 我的主页</NavLink>
                             </li>
-                            <li onClick={() => this.setState({
-                                isShows: !this.state.isShows
-                            })}>
+                            <li onClick={() => {
+                                this.props.isShow()
+                                this.setState({
+                                    isShows: !this.state.isShows
+                                })
+                            }}>
                                 <NavLink to='/login' >♀ 退出登录</NavLink>
                             </li>
                         </ul>}
@@ -50,5 +54,11 @@ class headers extends Component {
         )
     }
 }
-
-export default connect(state => state)(headers)
+const mapDispatchToProps = (dispatch)=>{
+    return {
+        isShow(){
+            dispatch(falseLoginAction())
+        }
+    }
+}
+export default connect(state => state, mapDispatchToProps)(headers)

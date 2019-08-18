@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink, Route,Switch,Redirect } from 'react-router-dom'
 import './index.scss'
 export default class Content extends Component {
     render() {
+        console.log()
+        const { path, url} = this.props.match
         return (
             <div className='profile'>
                 <div className='profile-card'>
@@ -23,15 +25,22 @@ export default class Content extends Component {
                 </div>
                 <div className='profile-data '>
                     <ul className='flex'>
-                        <li><NavLink to='/dongtai' activeClassName='link'>动态</NavLink></li>
-                        <li><NavLink to='/huida' activeClassName='link'>回答</NavLink></li>
-                        <li><NavLink to='/wenzhang' activeClassName='link'>文章</NavLink></li>
-                        <li><NavLink to='/tiwen' activeClassName='link'>提问</NavLink></li>
-                        <Route path='/dongtai' exact component={() => <div>123</div>} />
-                        <Route path='/huida' component={() => <div>345</div>} />
-                        <Route path='/wenzhang' component={() => <div>464</div>} />
-                        <Route path='/tiwen' component={() => <div>444</div>} />
+
+                        <li><NavLink to={`${url}/dongtai`}activeClassName='link'>动态</NavLink></li>
+                        <li><NavLink to={`${url}/huida`} activeClassName='link'>回答</NavLink></li>
+                        <li><NavLink to={`${url}/wenzhang`} activeClassName='link'>文章</NavLink></li>
+                        <li><NavLink to={`${url}/tiwen`} activeClassName='link'>提问</NavLink></li>
                     </ul>
+                    <main>
+                        <Switch>
+                            <Route path={`${path}/dongtai`} component={() => <div>123</div>} />
+                            <Route path={`${path}/huida`} component={() => <div>345</div>} />
+                            <Route path={`${path}/wenzhang`} component={() => <div>464</div>} />
+                            <Route path={`${path}/tiwen`} component={() => <div>444</div>} />
+                            <Redirect to={`${path}/dongtai`}/>
+                        </Switch>
+
+                    </main>
                 </div>
             </div>
         )
