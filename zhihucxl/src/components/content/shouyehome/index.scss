@@ -6,6 +6,9 @@
    .contentbox{
        padding: 10px;
        padding-bottom: 30px;
+       img{
+           display: block;
+       }
        .block-tetx{
         padding: 15px 0 14px;
         margin: 0px 20px;
@@ -34,7 +37,7 @@
                 // height: 65px;
                 border-radius: 6px;
             }
-    
+
             .x {
                 display: block;
                 // width: 60px;
@@ -49,7 +52,7 @@
                 margin-left: 20px;
                 background-color: rgb(229, 242, 255);
             }
-    
+
             .l {
                 display: block;
                 // width: 160px;
@@ -62,19 +65,19 @@
                 font-weight: 400;
                 margin-left: 20px;
                 color: rgb(133, 144, 166);
-    
+
                 .l1 {
                     width: 50px;
                     display: block;
                     float: left;
                 }
-    
+
                 .l2 {
                     display: block;
                     float: left;
                 }
             }
-    
+
             .s {
                 font-size: 32px;
                 // height: 65px;

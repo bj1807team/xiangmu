@@ -116,7 +116,6 @@ class Login extends Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         stateLogin() {
-            console.log(stateLoginAction())
             dispatch(stateLoginAction())
         }
     }

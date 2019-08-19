@@ -1,7 +1,7 @@
 import axios from 'axios';
 import jsonp from 'jsonp'
 // 设置默认访问路径
-axios.defaults.baseURL = "http://localhost:4503"
+axios.defaults.baseURL = "http://192.168.45.77:4503"
 
 // 请求拦截 响应拦截 Interceptors 拦截器
 axios.interceptors.response.use((res) => {
