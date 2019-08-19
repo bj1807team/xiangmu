@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom';
-
-import { gitHomes} from '../../../api/index'
+import { gitHomes } from '../../../api/index'
+import './index.scss'
 export default class index extends Component {
-    constructor(props){
+    constructor(props) {
         super()
-        this.state={
-            lists:[],
-            isShow:[],
+        this.state = {
+            lists: [],
+            isShow: [],
         }
     }
-    componentDidMount(){
-        gitHomes().then(res=>{
+    componentDidMount() {
+        gitHomes().then(res => {
             // console.log(res)
             this.setState(() => {
                 return {
@@ -20,9 +20,9 @@ export default class index extends Component {
             })
         })
     }
-    showBtn(idx){
+    showBtn(idx) {
         let isShows = []
-       isShows[idx] = !this.state.isShow[idx]
+        isShows[idx] = !this.state.isShow[idx]
         this.setState({
             isShow: isShows
         })
@@ -30,7 +30,7 @@ export default class index extends Component {
     render() {
         const { lists } = this.state
         return (
-            <div className="cxl-name">
+            <div className="homebox">
                 <div className="contentbox">
                     {
                         lists && lists.map((item, index) => {
@@ -44,7 +44,7 @@ export default class index extends Component {
                                     <p className="content">{item.content}</p>
 
                                 </NavLink>
-                                <div className='for'>
+                                <div className='forbox'>
                                     <div className='div4'>
                                         <span className='z'>▲{item.agree}</span>
                                         <span className='x'>▼</span>
